@@ -109,3 +109,9 @@ int main(){
 	//dispArr(arr, 10);
 	return 0;
 }
+
+/*
+using template
+main(){
+Array<int>myA(10);
+}*/
