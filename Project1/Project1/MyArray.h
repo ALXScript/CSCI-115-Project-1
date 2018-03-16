@@ -20,10 +20,8 @@ public:
 	void reverse(); // reverses array
 	void dispArr(); //for displaying smaller arrays to test and ensure they're sorted
 
-
 private:
 	int size;
 	T* myArray;
 };
-
 #endif // MY_ARRAY_H
