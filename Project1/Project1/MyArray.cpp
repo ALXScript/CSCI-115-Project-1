@@ -66,6 +66,13 @@ void Array<T>::setElem(int idx, T item)
 	myArray[idx] = item;
 }
 
+template <typename T>
+void Array<T>::swapElem(int a, int b) {
+	T temp = myArray[a];
+	myArray[a] = myArray[b];
+	myArray[b] = temp;
+}
+
 //Shuffles using time to ensure randomness
 template <typename T> 
 void Array<T>::shuffle() {

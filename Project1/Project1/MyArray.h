@@ -15,7 +15,8 @@ public:
 	int getSize(); //inside should return size, should be an int
 	double getMean(); //for calculation of Mean of alg runtime data stored in array
 	double getStDev();// for calulating standard deviation of alg runtime data stored in array 
-	void setElement(int idx, T item); //used to set an elem at index "idx" with arg "item"
+	void setElem(int idx, T item); //used to set an elem at index "idx" with arg "item"
+	void swapElem(int a, int b); //swap elementsin the array 
 	void shuffle();
 	void reverse(); // reverses array
 	void dispArr(); //for displaying smaller arrays to test and ensure they're sorted
