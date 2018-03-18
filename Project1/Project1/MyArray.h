@@ -1,7 +1,6 @@
 //header file for making the arary template
-
-//#define MY_ARRAY_H
-//#ifndef MY_ARRAY_H
+#ifndef MY_ARRAY_H
+#define MY_ARRAY_H
 /*
 What Has been changed: 3/17 5:15pm
 1. added a swap elements function and get element function to change array with alg functions
@@ -27,4 +26,4 @@ private:
 	int size;
 	T* myArray;
 };
-//#endif // MY_ARRAY_H
+#endif // MY_ARRAY_H

@@ -1,7 +1,7 @@
+#include "MyArray.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "MyArray.h"
 
 using namespace std;
 /*
