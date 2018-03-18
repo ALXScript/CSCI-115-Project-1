@@ -6,9 +6,21 @@ using namespace std;
 
 void main()
 {
+<<<<<<< HEAD
 
+=======
+	//testing to access the ourArray class
+	
+	ourArray<int> example(2);
 
-	char input;
+	example.setElem(0, 5);
+	example.setElem(1, 8);
+	example.dispArr();
+
+	
+>>>>>>> b04ef12f5590df07cbf4f686985b18f93d88f09f
+
+	/*char input;
 	/*
 	legend:
 	e = exit
@@ -17,10 +29,7 @@ void main()
 	b = bubble sort
 	q = quick sort
 	m = merge sort
-	*/
-
 	
-
 	while (input != 'e')
 	{
 		switch (input)
@@ -41,4 +50,6 @@ void main()
 			break;
 		}
 	}
+	*/
+	
 }
