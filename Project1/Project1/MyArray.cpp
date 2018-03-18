@@ -88,9 +88,23 @@ void ourArray<T>::shuffle() {
 	for (int i = 0; i< size; i++) 
 	{
 		//mod size should give a number within range of array size
+		int idx = rand() % size;
 		T temp = myArray[i];
 		myArray[i] = myArray[rand() % size];
 		myArray[rand() % size] = temp;
+	}
+}
+
+template <typename T>
+void ourArray<T>::shuffle10() {
+	srand(time(NULL));
+	for (int i = 0; i< size/10; i++)
+	{
+		//mod size should give a number within range of array size
+		int idx = rand() % size;
+		T temp = myArray[i];
+		myArray[i] = myArray[idx];
+		myArray[idx] = temp;
 	}
 }
 
