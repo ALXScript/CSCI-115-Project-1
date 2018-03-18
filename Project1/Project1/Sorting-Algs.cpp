@@ -1,20 +1,22 @@
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
-#include <cmath>
+#include <cstdlib>
+#include "MyArray.h"
 
 using namespace std;
-
 /*
-What still needs to be fixed:
-	1. srand and time are still showing errors
-	2. Clock(), clock_T, and CLOCKS_PER_SECOND are still showing errors
-	
 What Has been changed:
-	1. Changed formatting to make it more readable
-	2. Any changes to code will be described using "///" commentary
-	3. Errors with lo, hi, arr, and idx fixed (wrong way to call pointer arr* changed to *arr
-	4. swapArr function implemented, fixed swapArr errors
+	1. Made sorting functions compatible with class Array due to them not being able to make direct changes to the array
+	2. Removed time keeping part of functions so we could implement them in main or elsewhere
+	3. For some reason all srand/time errors from before are gone. I hope it stays that way lol
+	4. Any other changes marked with ///
+
+Needs fixing:
+	1. Not sure why, but "expected a declaration" errors will come and go
+	2. Code looks fine to me but visual studio is displaying a lotog errors
+	3. Not really needs fixing but I left the swapArr and dispArr functions alone just in case we need them for some reason
+	   but I implemenented them into the class so they're really not necessary. If you wanna delete them go ahead, I don't mind.
+	
 */
 
 //Function: Swap elements in an array
@@ -34,45 +36,48 @@ void dispArr(int arr[], int N){
 }
 
 //Function: Assigns random array values
-void randomize(int *arr, int N){
-    srand(time(0));
-	for (int i = 0; i < N; i++)
+template <typename T>
+void randomize(Array<T> &arr){
+    srand(time(NULL));
+	for (int i = 0; i < arr.getSize(); i++)
 	{
-		arr[i] = rand() % 100;
+		arr.setElem(i, rand() % 100);
 	}
 }
 
 //Function: Selection sort
-void selSort(int *arr, int N){
-	for (int i=0; i<N; i++)
+template <typename T>
+void selSort(Array<T> &arr){
+	for (int i=0; i< arr.getSize(); i++)
 	{
-		int min= arr[i];
+		int min= arr.getElem(i);
 		int ind= i;
-		for (int j= i; j<N; j++)
+		for (int j= i; j< arr.getSize(); j++)
 		{
-			if (arr[j]<min)
+			if (arr.getElem(j)<min)
 			{
-				min = arr[j];
+				min = arr.getElem(j);
 				ind = j;
 			}
 		}
-		if (min < arr[i])
+		if (min < arr.getElem(i))
 		{
-			swapArr(arr, i, ind);
+			arr.swapElem(i, ind);
 		}
 	}
 }
 
 //Function: Insertion Sort
-void insSort(int *arr, int lo, int hi){
+template <typename T>
+void insSort(Array<T> &arr, int lo, int hi){
         for (int i=(lo+1); i<= hi;i++)
 		{
 			int idx = i;
-			for (int j = (i-1); j>=lo; j--)
+			for (int j = i-1; j>=lo; j--)
 			{
-				while(arr[idx] <arr[j])
+				while(arr.getElem(idx) < arr.getElem(j))
 				{
-					swap(arr[idx], arr[j]);
+					arr.swapElem(idx, j);
 					idx = j;
 				}
 			}
@@ -80,25 +85,27 @@ void insSort(int *arr, int lo, int hi){
 }
 
 //Function: Bubble Sort
-void bubbleSort(int *arr, int size){
-	for (int i = 0; i < size-1; i++)
+template <typename T>
+void bubbleSort(Array<T> &arr){
+	for (int i = 0; i < arr.getSize() -1; i++)
 	{     
-		for (int j = 0; j < size - 1; j++)
+		for (int j = 0; arr.getSize() - 1; j++)
 		{
-			if (arr[j] > arr[j + 1])
+			if (arr.getElem(j) > arr.getElem(j + 1))
 			{
-				swapArr(arr, j, j + 1);
+				arr.swapElem(j, j + 1);
 			}
 		}
     }
 }
 
 //Function: Merge for Merge Sort
-void merge(int *a, int *aux, int lo, int mid, int hi){	///originally a* and aux* changed to *a and *aux
+template <typename T>
+void merge(Array<T> &arr, Array<T> &aux, int lo, int mid, int hi){	
 	//refreshes the aux array to proper sorted order
 	for (int idx = lo; idx <= hi; idx++)
 	{
-		aux[idx] = a[idx];
+		aux.setElem(idx, arr.getElem(idx));
 	}
 
 	//sets start of subarrays 
@@ -109,56 +116,56 @@ void merge(int *a, int *aux, int lo, int mid, int hi){	///originally a* and aux*
 		//if lo index is greater than middle index then set a[curr index]
 		if (i > mid)
 		{
-			a[idx] = aux[j++];
+			arr.setElem(idx, aux.getElem(j++));
 		}
 		else if (j > hi)
 		{
-			a[idx] = aux[i++];
+			arr.setElem(idx, aux.getElem(i++));
 		}
-		else if (aux[j] < aux[i])
+		else if (aux.getElem(j) < aux.getElem(i))
 		{
-			a[idx] = aux[j++];
+			arr.setElem(idx, aux.getElem(j++));
 		}
 		else
 		{
-			a[idx] = aux[i++];
+			arr.setElem(idx, aux.getElem(i++));
 		}
     } 
 }    
 
 //Function: Merge Sort that recursively breaks up array into subarrays
-void mergeS(int *a, int *aux, int lo, int hi){	///originally a* and aux* changed to *a and *aux
+template <typename T>
+void mergeS(Array<T> &arr, Array<T> &aux, int lo, int hi){	
     if (lo < hi)
 	{   
         int mid = (lo + hi - 1) /2;
-        mergeS(a, aux, lo, mid);
-        mergeS(a, aux, mid+1, hi);
-        merge(a, aux, lo, mid, hi);
+        mergeS(arr, aux, lo, mid);
+        mergeS(arr, aux, mid+1, hi);
+        merge(arr, aux, lo, mid, hi);
     }
 }
 
 //Function: Initializes the mergesort function
-void mergeSort(int *arr, int N){	///originally arr* changed to *arr
-    int aux[N];
-    clock_t start = clock();
-    mergeS(arr, aux, 0, N-1);
-    double duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
-    cout<< "Time for MergeSort is: " << duration << endl; 
+template <typename T>
+void mergeSort(Array<T> &arr){	
+	Array<T> aux = Array(arr.getSize);
+    mergeS(arr, aux, 0, arr.getSize() -1);
 }
 
 //Function: Belongs to Quick Sort function : This function partitions the array
-int partition(int *arr, int lo, int hi){	///originally arr* changed to *arr
+template <typename T>
+int partition(Array<T> &arr, int lo, int hi){
     int i = lo, j = hi+1;
     while (true)
 	{
-		while (arr[i++] < arr[lo]) ///originally ++i changed to i++
+		while (arr.getElem(++i) < arr.getElem(lo)) /// changed back to ++i because the way the function is written it has to increment this index before running the while loop
 		{
 			if (i == hi)
 			{
 				break;
 			}
 		}
-		while (arr[lo] < arr[j--]) ///originally --j changed to j--
+		while (arr.getElem(lo) < arr.getElem(--j)) /// changed back to --j because the way the function is written it has to decrement this index before running the while loop
 		{
 			if (j == lo)
 			{
@@ -169,15 +176,16 @@ int partition(int *arr, int lo, int hi){	///originally arr* changed to *arr
 		{
 			break;
 		}
-        swap(arr[i], arr[j]);
+        arr.swapElem(i, j);
 	}
-    swap(arr[lo], arr[j]);
+    arr.swapElem(lo, j);
     
 	return j;
 }
 
 //Function: Quick Sort
-void quickSort(int *arr, int lo, int hi){	///originally arr* changed to *arr
+template<typename T>
+void quickSort(Array<T> &arr, int lo, int hi){	
 	if (hi <= lo)
 	{
 		return;

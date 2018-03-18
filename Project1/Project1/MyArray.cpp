@@ -8,7 +8,10 @@ using namespace std;
 
 /*
 What has been done:
-	1. Spaced everything out more to make it more readable
+	1. Added swapElem and getElem function.
+
+Needs Fixing:
+	1. Everything looks fine to me but I'm getting a lot of errors saying "Illegal use of type 'void' ", syntax errors and a few others. Let me know if you get those too.
 */
 
 template <typename T>
@@ -30,7 +33,12 @@ Array<T>::~Array() {
 
 template <typename T>
 int Array<T>::getSize() {
-	return n;
+	return size;
+}
+
+template <typename T>
+T Array<T>::getElem(int idx) {
+	return myArray[idx];
 }
 
 template <typename T>
@@ -76,16 +84,17 @@ void Array<T>::swapElem(int a, int b) {
 //Shuffles using time to ensure randomness
 template <typename T> 
 void Array<T>::shuffle() {
-	//for some reason theres an error without specifying "std::time()" even though using namespace. Will Fix this.
 	srand(time(NULL)); 
 	for (int i = 0; i< size; i++) 
 	{
 		//mod size should give a number within range of array size
-		swap(myArray[i], myArray[rand() % size]); 
+		T temp = myArray[i];
+		myArray[i] = myArray[rand() % size];
+		myArray[rand() % size] = temp;
 	}
 }
 
-//reverses by creating a new array and setting myArray = to new array
+//reverses by swapping first elem and last elem and decrements/increments as necessary
 template <typename T>
 void Array<T>::reverse() { 
 	T temp;
