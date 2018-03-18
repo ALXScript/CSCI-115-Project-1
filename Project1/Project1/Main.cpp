@@ -1,4 +1,5 @@
 #include"MyArray.h"
+#include"Sorting-Algs.h"
 #include<cstdlib>
 #include<iostream>
 
@@ -6,20 +7,11 @@ using namespace std;
 
 void main()
 {
-<<<<<<< HEAD
 
-=======
 	//testing to access the ourArray class
 	
-	ourArray<int> example(2);
-
-	example.setElem(0, 5);
-	example.setElem(1, 8);
-	example.dispArr();
-
+	ourArray<int> example(10);
 	
->>>>>>> b04ef12f5590df07cbf4f686985b18f93d88f09f
-
 	/*char input;
 	/*
 	legend:
@@ -35,6 +27,23 @@ void main()
 		switch (input)
 		{
 		case 'i':
+			runInsertion();
+
+			separate .cpp
+			void runInsertion(){
+			(cout << "Already Sorted N = 10: " << result -> AnswerArray) * 100
+			cout << mean(answerArray);
+			cout << standardDeviation(answerArray);
+			}
+
+			void sortedArray(int n){
+				for(int i = 0; i < n; i++){
+					myArray[i] = i+1;
+					29,43,11,43,56
+					11,29,43,43,56
+					1,2,3,4,5
+				}
+			}
 			break;
 		case 's':
 			break;

@@ -19,7 +19,7 @@ public:
 	void setElem(int idx, T item); //used to set an elem at index "idx" with arg "item"
 	void swapElem(int a, int b); //swap elements in the array 
 	void shuffle();	//shuffles the array
-	void shuffle10();	//shuffles the array and sorts 10% of it
+	void shuffle10();	//Takes sorted array and shuffles 10% of it
 	void reverse(); // reverses array
 	void dispArr(); //for displaying smaller arrays to test and ensure they're sorted
 
