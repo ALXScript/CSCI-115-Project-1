@@ -3,7 +3,7 @@
 #include <ctime>
 #include <cstdlib>
 
-using namespace std;
+//using namespace std;
 /*
 What Has been changed:
 	1. Made sorting functions compatible with class ourArray due to them not being able to make direct changes to the array
@@ -31,7 +31,7 @@ void swapArr(int *myArr, int index1, int index2) {
 void dispArr(int arr[], int N){
     for (int i = 0; i<N; i++)
 	{
-		cout<< arr[i]<< ", ";
+		std::cout<< arr[i]<< ", ";
 	}
 }
 
