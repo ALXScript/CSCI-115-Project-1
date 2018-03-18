@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include "MyArray.h"
 
-using namespace std; 
+//using namespace std; 
 
 /*
 What has been done:
@@ -110,6 +110,6 @@ void Array<T>::reverse() {
 template <typename T>
 void Array<T>::dispArr() {
 	for (int i = 0; i < size; i++) {
-		cout << myArray[i] << ", ";
+		std::cout << myArray[i] << ", ";
 	}
 }
