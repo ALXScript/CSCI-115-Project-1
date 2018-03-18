@@ -15,34 +15,34 @@ Needs Fixing:
 */
 
 template <typename T>
-Array<T>::Array() {
+ourArray<T>::ourArray() {
 	myArray = nullptr;
 	size = 0;
 }
 
 template <typename T>
-Array<T>::Array(int n) {
+ourArray<T>::ourArray(int n) {
 	myArray = new T[n];
 	size = n;
 }
 
 template <typename T>
-Array<T>::~Array() {
+ourArray<T>::~ourArray() {
 	delete[] myArray;
 }
 
 template <typename T>
-int Array<T>::getSize() {
+int ourArray<T>::getSize() {
 	return size;
 }
 
 template <typename T>
-T Array<T>::getElem(int idx) {
+T ourArray<T>::getElem(int idx) {
 	return myArray[idx];
 }
 
 template <typename T>
-double Array<T>::getMean() {
+double ourArray<T>::getMean() {
 	double sum;
 	for (int i = 0; i < size; i++)
 	{
@@ -52,7 +52,7 @@ double Array<T>::getMean() {
 }
 
 template <typename T>
-double Array<T>::getStDev() { 
+double ourArray<T>::getStDev() { 
 	double sum1, sum2, mean1, mean2;
 	for (int i = 0; i < size; i++) 
 	{
@@ -69,13 +69,13 @@ double Array<T>::getStDev() {
 }
 
 template <typename T>
-void Array<T>::setElem(int idx, T item) 
+void ourArray<T>::setElem(int idx, T item) 
 {
 	myArray[idx] = item;
 }
 
 template <typename T>
-void Array<T>::swapElem(int a, int b) {
+void ourArray<T>::swapElem(int a, int b) {
 	T temp = myArray[a];
 	myArray[a] = myArray[b];
 	myArray[b] = temp;
@@ -83,7 +83,7 @@ void Array<T>::swapElem(int a, int b) {
 
 //Shuffles using time to ensure randomness
 template <typename T> 
-void Array<T>::shuffle() {
+void ourArray<T>::shuffle() {
 	srand(time(NULL)); 
 	for (int i = 0; i< size; i++) 
 	{
@@ -96,7 +96,7 @@ void Array<T>::shuffle() {
 
 //reverses by swapping first elem and last elem and decrements/increments as necessary
 template <typename T>
-void Array<T>::reverse() { 
+void ourArray<T>::reverse() { 
 	T temp;
 	for (int i = 0; i < size/2; i++) 
 	{
@@ -108,7 +108,7 @@ void Array<T>::reverse() {
 }
 
 template <typename T>
-void Array<T>::dispArr() {
+void ourArray<T>::dispArr() {
 	for (int i = 0; i < size; i++) {
 		std::cout << myArray[i] << ", ";
 	}

@@ -9,7 +9,6 @@ void main()
 	/*
 	
 	*/
-	template<typename T> Array<T>::Array();
 
 	char input;
 	/*

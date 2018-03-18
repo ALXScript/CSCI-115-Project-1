@@ -6,7 +6,7 @@
 using namespace std;
 /*
 What Has been changed:
-	1. Made sorting functions compatible with class Array due to them not being able to make direct changes to the array
+	1. Made sorting functions compatible with class ourArray due to them not being able to make direct changes to the array
 	2. Removed time keeping part of functions so we could implement them in main or elsewhere
 	3. For some reason all srand/time errors from before are gone. I hope it stays that way lol
 	4. Any other changes marked with ///
@@ -37,7 +37,7 @@ void dispArr(int arr[], int N){
 
 //Function: Assigns random array values
 template <typename T>
-void randomize(Array<T> &arr){
+void randomize(ourArray<T> &arr){
     srand(time(NULL));
 	for (int i = 0; i < arr.getSize(); i++)
 	{
@@ -47,7 +47,7 @@ void randomize(Array<T> &arr){
 
 //Function: Selection sort
 template <typename T>
-void selSort(Array<T> &arr){
+void selSort(ourArray<T> &arr){
 	for (int i=0; i< arr.getSize(); i++)
 	{
 		int min= arr.getElem(i);
@@ -69,7 +69,7 @@ void selSort(Array<T> &arr){
 
 //Function: Insertion Sort
 template <typename T>
-void insSort(Array<T> &arr, int lo, int hi){
+void insSort(ourArray<T> &arr, int lo, int hi){
         for (int i=(lo+1); i<= hi;i++)
 		{
 			int idx = i;
@@ -86,7 +86,7 @@ void insSort(Array<T> &arr, int lo, int hi){
 
 //Function: Bubble Sort
 template <typename T>
-void bubbleSort(Array<T> &arr){
+void bubbleSort(ourArray<T> &arr){
 	for (int i = 0; i < arr.getSize() -1; i++)
 	{     
 		for (int j = 0; arr.getSize() - 1; j++)
@@ -101,7 +101,7 @@ void bubbleSort(Array<T> &arr){
 
 //Function: Merge for Merge Sort
 template <typename T>
-void merge(Array<T> &arr, Array<T> &aux, int lo, int mid, int hi){	
+void merge(ourArray<T> &arr, ourArray<T> &aux, int lo, int mid, int hi){	
 	//refreshes the aux array to proper sorted order
 	for (int idx = lo; idx <= hi; idx++)
 	{
@@ -135,7 +135,7 @@ void merge(Array<T> &arr, Array<T> &aux, int lo, int mid, int hi){
 
 //Function: Merge Sort that recursively breaks up array into subarrays
 template <typename T>
-void mergeS(Array<T> &arr, Array<T> &aux, int lo, int hi){	
+void mergeS(ourArray<T> &arr, ourArray<T> &aux, int lo, int hi){	
     if (lo < hi)
 	{   
         int mid = (lo + hi - 1) /2;
@@ -147,14 +147,14 @@ void mergeS(Array<T> &arr, Array<T> &aux, int lo, int hi){
 
 //Function: Initializes the mergesort function
 template <typename T>
-void mergeSort(Array<T> &arr){	
-	Array<T> aux = Array(arr.getSize);
+void mergeSort(ourArray<T> &arr){	
+	ourArray<T> aux = ourArray(arr.getSize);
     mergeS(arr, aux, 0, arr.getSize() -1);
 }
 
 //Function: Belongs to Quick Sort function : This function partitions the array
 template <typename T>
-int partition(Array<T> &arr, int lo, int hi){
+int partition(ourArray<T> &arr, int lo, int hi){
     int i = lo, j = hi+1;
     while (true)
 	{
@@ -185,7 +185,7 @@ int partition(Array<T> &arr, int lo, int hi){
 
 //Function: Quick Sort
 template<typename T>
-void quickSort(Array<T> &arr, int lo, int hi){	
+void quickSort(ourArray<T> &arr, int lo, int hi){	
 	if (hi <= lo)
 	{
 		return;
