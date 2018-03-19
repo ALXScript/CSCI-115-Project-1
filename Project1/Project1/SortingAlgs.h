@@ -117,7 +117,7 @@ void mergeS(ourArray<T> &arr, ourArray<T> &aux, int lo, int hi) {
 //Function: Initializes the mergesort function
 template <typename T>
 void mergeSort(ourArray<T> &arr) {
-	ourArray<T> aux = ourArray(arr.getSize);
+	ourArray<T> aux(arr.getSize());
 	mergeS(arr, aux, 0, arr.getSize() - 1);
 }
 
