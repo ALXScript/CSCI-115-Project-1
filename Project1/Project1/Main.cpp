@@ -27,7 +27,12 @@ void main()
 	q = Quick Sort
 	m = Merge Sort
 	*/
+
+	insSortSorted(10);
+	cout << endl;
+
 	
+
 	do
 	{
 		switch (sort)

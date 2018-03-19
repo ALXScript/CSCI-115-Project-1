@@ -126,7 +126,7 @@ void ourArray<T>::shuffle() {
 		//mod size should give a number within range of array size
 		int idx = rand() % size;
 		T temp = myArray[i];
-		myArray[i] = myArray[rand() % size];
+		myArray[i] = myArray[idx];
 		myArray[rand() % size] = temp;
 	}
 }
@@ -155,13 +155,17 @@ void ourArray<T>::preSort() {
 //reverses by swapping first elem and last elem and decrements/increments as necessary
 template <typename T>
 void ourArray<T>::reverse() {
-	T temp;
+	for (int i = 0; i < size; i++)
+	{
+		myArray[size - 1 - i] = i;
+	}
+	/*T temp;
 	for (int i = 0; i < size / 2; i++)
 	{
 		temp = myArray[i];
 		myArray[i] = myArray[size - 1 - i];
 		myArray[size - 1 - i] = temp;
-	}
+	}*/
 
 }
 

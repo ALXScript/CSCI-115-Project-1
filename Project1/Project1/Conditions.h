@@ -71,7 +71,7 @@ void insSortReversed(int arraySize) {
 	for (int i = 0; i < 100; i++)
 	{
 		ourArray<int> execute(arraySize);
-		execute.preSort();
+		//execute.preSort();
 		execute.reverse();
 		clock_t start = clock();
 		insSort(execute, 0, arraySize);
