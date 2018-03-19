@@ -1,11 +1,8 @@
 #ifndef SORTING_ALGS_H
 #define SORTING_ALGS_H
 
-
 #include "MyArray.h"
-#include <iostream>
 #include <ctime>
-#include <cstdlib>
 
 /*
 What Has been changed:

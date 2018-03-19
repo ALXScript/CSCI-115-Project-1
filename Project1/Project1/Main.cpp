@@ -1,7 +1,6 @@
 #include"MyArray.h"
 #include"Sorting-Algs.h"
-#include<cstdlib>
-#include<iostream>
+
 
 using namespace std;
 
