@@ -4,6 +4,12 @@
 
 using namespace std;
 
+void resetAll(char &s, char &t, int &as) {
+	s = 'z';
+	t = 'z';
+	as = 0;
+}
+
 void main()
 {	
 	//characters for selecting the types we want
@@ -43,30 +49,32 @@ void main()
 				case 10:
 					//Insertion Sort for a Sorted Array of Size 10
 					insSortSorted(arraySize);
-					arraySize = 0;
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1000
 				case 1000:
 					insSortSorted(arraySize);
-					arraySize = 0;
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 10,000
 				case 10000:
 					insSortSorted(arraySize);
-					arraySize = 0;
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 100,000
 				case 100000:
 					insSortSorted(arraySize);
-					arraySize = 0;
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1,000,000
 				case 1000000:
 					//Insertion Sort For a Sorted Array of Size 1,000,000
+					insSortSorted(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//default UI
@@ -84,26 +92,36 @@ void main()
 				//size 10
 				case 10:
 					//Insertion Sort for a Completely Shuffled Array of Size 10
+					insSortShuffled(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1000
 				case 1000:
 					//Insertion Sort For a Completely Shuffled Array of Size 1,000
+					insSortShuffled(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 10,000
 				case 10000:
 					//Insertion Sort For a Completely Shuffled Array of Size 10,000
+					insSortShuffled(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 100,000
 				case 100000:
 					//Insertion Sort For a Completely Shuffled Array of Size 100,000
+					insSortShuffled(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1,000,000
 				case 1000000:
 					//Insertion Sort For a Completely Shuffled Array of Size 1,000,000
+					insSortShuffled(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//default UI
@@ -121,26 +139,36 @@ void main()
 				//size 10
 				case 10:
 					//Insertion Sort for a Reverse Order Array of Size 10
+					insSortReversed(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1000
 				case 1000:
 					//Insertion Sort For a Reverse Order Array of Size 1,000
+					insSortReversed(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 10,000
 				case 10000:
 					//Insertion Sort For a Reverse Order Array of Size 10,000
+					insSortReversed(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 100,000
 				case 100000:
 					//Insertion Sort For a Reverse Order Array of Size 100,000
+					insSortReversed(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1,000,000
 				case 1000000:
 					//Insertion Sort For a Reverse Order Array of Size 1,000,000
+					insSortReversed(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//default UI
@@ -158,26 +186,36 @@ void main()
 				//size 10
 				case 10:
 					//Insertion Sort for a Sorted and Shuffled at 10% Array of Size 10
+					insSortShuffled10(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1000
 				case 1000:
 					//Insertion Sort For a Sorted and Shuffled at 10% Array of Size 1,000
+					insSortShuffled10(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 10,000
 				case 10000:
 					//Insertion Sort For a Sorted and Shuffled at 10% Array of Size 10,000
+					insSortShuffled10(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 100,000
 				case 100000:
 					//Insertion Sort For a Sorted and Shuffled at 10% Array of Size 100,000
+					insSortShuffled10(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//size 1,000,000
 				case 1000000:
 					//Insertion Sort For a Sorted and Shuffled at 10% Array of Size 1,000,000
+					insSortShuffled10(arraySize);
+					resetAll(sort, arrayType, arraySize);
 					break;
 
 				//default UI
