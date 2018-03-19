@@ -127,7 +127,7 @@ void ourArray<T>::shuffle() {
 		int idx = rand() % size;
 		T temp = myArray[i];
 		myArray[i] = myArray[idx];
-		myArray[rand() % size] = temp;
+		myArray[idx] = temp;
 	}
 }
 
