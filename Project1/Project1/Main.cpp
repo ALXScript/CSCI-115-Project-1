@@ -1,5 +1,5 @@
 #include"MyArray.h"
-#include"Sorting-Algs.h"
+#include"SortingAlgs.h"
 #include<cstdlib>
 #include<iostream>
 
@@ -11,6 +11,8 @@ void main()
 	char sort;
 	char arrayType;
 	int arraySize;
+
+	
 	
 	/*
 	legend:

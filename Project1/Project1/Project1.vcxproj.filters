@@ -23,7 +23,7 @@
     <ClInclude Include="MyArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sorting-Algs.h">
+    <ClInclude Include="SortingAlgs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
