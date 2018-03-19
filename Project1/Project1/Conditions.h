@@ -34,7 +34,7 @@ void insSortShuffled(int arraySize) {
 		execute.preSort();
 		execute.shuffle();
 		clock_t start = clock();
-		insSort(execute, 0, arraySize - 1);
+		insSort(execute, 0, arraySize);
 		double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 		timeArray.setElem(i, timeSpent);
 	}
@@ -54,7 +54,7 @@ void insSortShuffled10(int arraySize) {
 		execute.preSort();
 		execute.shuffle10();
 		clock_t start = clock();
-		insSort(execute, 0, arraySize - 1);
+		insSort(execute, 0, arraySize);
 		double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 		timeArray.setElem(i, timeSpent);
 	}
@@ -74,7 +74,7 @@ void insSortReversed(int arraySize) {
 		execute.preSort();
 		execute.reverse();
 		clock_t start = clock();
-		insSort(execute, 0, arraySize - 1);
+		insSort(execute, 0, arraySize);
 		double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 		timeArray.setElem(i, timeSpent);
 	}
