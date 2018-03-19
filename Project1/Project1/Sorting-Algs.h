@@ -7,7 +7,6 @@
 #include <ctime>
 #include <cstdlib>
 
-//using namespace std;
 /*
 What Has been changed:
 1. Made sorting functions compatible with class ourArray due to them not being able to make direct changes to the array
@@ -16,34 +15,7 @@ What Has been changed:
 4. Any other changes marked with ///
 
 Needs fixing:
-
 */
-
-//Function: Swap elements in an array
-//void swapArr(int *myArr, int index1, int index2) {
-//	int temp;
-//	temp = myArr[index1];
-//	myArr[index1] = myArr[index2];
-//	myArr[index2] = temp;
-//}
-//
-////Function: Displays array
-//void dispArr(int arr[], int N){
-//    for (int i = 0; i<N; i++)
-//	{
-//		std::cout<< arr[i]<< ", ";
-//	}
-//}
-
-//Function: Assigns random array values
-template <typename T>
-void randomize(ourArray<T> &arr) {
-	srand(time(NULL));
-	for (int i = 0; i < arr.getSize(); i++)
-	{
-		arr.setElem(i, rand() % 100);
-	}
-}
 
 //Function: Selection sort
 template <typename T>

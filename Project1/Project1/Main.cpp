@@ -6,59 +6,127 @@
 using namespace std;
 
 void main()
-{
-
-	//testing to access the ourArray class
+{	
+	//characters for selecting the types we want
+	char sort;
+	char arrayType;
+	int arraySize;
 	
-	ourArray<int> example(10);
-	
-	/*char input;
 	/*
 	legend:
-	e = exit
-	i = insertion sort
-	s = selection sort
-	b = bubble sort
-	q = quick sort**
-	m = merge sort
+	e = Exit
+	i = Insertion Sort
+	s = Selection Sort
+	b = Bubble Sort
+	q = Quick Sort
+	m = Merge Sort
+	*/
 	
-	while (input != 'e')
+	while (sort != 'e')
 	{
-		switch (input)
+		switch (sort)
 		{
+		//Insertion sort
 		case 'i':
-			runInsertion();
+			switch (arrayType)
+			{
+			//sorted
+			case 's':
+				switch (arraySize)
+				{
+				//size 10
+				case 10:
+					/*
+					//Insertion Sort for a Sorted Array of Size 10
+					ourArray<double> timeArray(100);
+					
+					for(int i = 0, i < 100, i++)
+					{
+						ourArray<int> execute(arraySize)
+						execute.preSort();
+						Start timer
+						insSort(execute);
+						end timer
+						double timeSpent = end timer - start timer
+						timeArray.setElem(i, timeSpent);
+						~execute()
+					}
 
-			separate .cpp
-			void runInsertion(){
-			(cout << "Already Sorted N = 10: " << result -> TimeArray) * 100
-			cout << mean(TimeArray);
-			cout << standardDeviation(TimeArray);
-			}
+					cout << endl << "Mean of Insertion Sort with Sorted Array of Size " << arraySize << " = " << timeArray.getMean() << endl;
+					cout << endl << "Standard Deviation of Insertion Sort with Sorted Array of Size " << arraySize << " = " << timeArray.getStDev() << endl;
 
-			void sortedArray(int n){
-				for(int i = 0; i < n; i++){
-					myArray[i] = i+1;
-					29,43,11,43,56
-					11,29,43,43,56
-					1,2,3,4,5
+					~timeArray();
+					
+					*/
+					break;
+
+				//size 1000
+				case 1000:
+					//Insertion Sort For a Sorted Array of Size 1,000
+					break;
+
+				//size 10,000
+				case 10000:
+					//Insertion Sort For a Sorted Array of Size 10,000
+					break;
+
+				//size 100,000
+				case 100000:
+					//Insertion Sort For a Sorted Array of Size 100,000
+					break;
+
+				//size 1,000,000
+				case 1000000:
+					//Insertion Sort For a Sorted Array of Size 1,000,000
+					break;
+
+				//default UI
+				default:
+					break;
 				}
+				break;
+				
+			//completely shuffled
+			case 'h':
+				break;
+
+			//reverse order
+			case 'r':
+				break;
+
+			//sorted and shuffled at 10%
+			case 't':
+				break;
+
+			//default UI
+			default:
+				break;
 			}
 			break;
+
+		//Selection sort
 		case 's':
 			break;
+
+		//Bubble Sort
 		case 'b':
 			break;
+
+		//Quick Sort
 		case 'q':
 			break;
+
+		//Merge Sort
 		case 'm':
 			break;
+
+		//default UI
 		default:
 			cout << "\n\nWhat would you like to do?\ni: Insertion Sort\ts: Selection Sort\nb: Bubble Sort\tq = Quick Sort\nm: Merge Sort\te: Exit\n";
-			cin >> input;
+			cin >> sort;
 			break;
 		}
 	}
-	*/
+	
 	
 }
