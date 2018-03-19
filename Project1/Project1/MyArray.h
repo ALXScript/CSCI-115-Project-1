@@ -20,6 +20,7 @@ public:
 	void swapElem(int a, int b); //swap elements in the array 
 	void shuffle();	//shuffles the array
 	void shuffle10();	//Takes sorted array and shuffles 10% of it
+	void preSort(); // initializes array with 1- size
 	void reverse(); // reverses array
 	void dispArr(); //for displaying smaller arrays to test and ensure they're sorted
 
@@ -141,6 +142,13 @@ void ourArray<T>::shuffle10() {
 	}
 }
 
+// Sets arrays elements in sorted order from 0 to size
+template <typename T>
+void ourArray<T>::preSort() {
+	for (int i = 0; i < size; i++){
+		myArray[i] = i;
+	}
+}
 //reverses by swapping first elem and last elem and decrements/increments as necessary
 template <typename T>
 void ourArray<T>::reverse() {
