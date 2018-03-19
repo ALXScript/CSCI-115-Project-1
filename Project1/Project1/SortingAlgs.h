@@ -40,26 +40,23 @@ void selSort(ourArray<T> &arr) {
 template <typename T>
 void insSort(ourArray<T> &arr, int lo, int hi) {
 	int j;
-	T key;
-	for (int i = 1; i < hi; i++)
+	for (int i = 0; i < hi; i++)
 	{
-		key = arr.getElem(i);
-		j = i - 1;
-		while (j >= 0 && arr.getElem(j) > key)
+		j = i;
+		while (j > 0 && arr.getElem(j) < arr.getElem(j-1))
 		{
-			arr.swapElem(j + 1, j);
-			j = j - 1;
+			arr.swapElem(j - 1, j);
+			j--;
 		}
-		arr.setElem(j + 1, key);
 	}
 }
 
 //Function: Bubble Sort
 template <typename T>
 void bubbleSort(ourArray<T> &arr) {
-	for (int i = 0; i < arr.getSize() - 1; i++)
+	for (int i = 0; i < arr.getSize()-1; i++)
 	{
-		for (int j = 0; arr.getSize() - 1; j++)
+		for (int j = 0;j < arr.getSize()-i-1; j++)
 		{
 			if (arr.getElem(j) > arr.getElem(j + 1))
 			{
