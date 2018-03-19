@@ -26,5 +26,8 @@
     <ClInclude Include="SortingAlgs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Conditions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

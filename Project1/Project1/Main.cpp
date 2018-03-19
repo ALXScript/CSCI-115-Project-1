@@ -1,7 +1,6 @@
 #include"MyArray.h"
 #include"SortingAlgs.h"
-#include<cstdlib>
-#include<iostream>
+#include"Conditions.h"
 
 using namespace std;
 

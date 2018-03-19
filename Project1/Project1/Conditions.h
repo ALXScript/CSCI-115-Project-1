@@ -2,7 +2,7 @@
 #define CONDITIONS_H
 
 #include "MyArray.h"
-#include "Sorting-Algs.h"
+#include "SortingAlgs.h"
 #include <iostream>
 #include <ctime>
 
