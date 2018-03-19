@@ -19,7 +19,7 @@ void main()
 	i = insertion sort
 	s = selection sort
 	b = bubble sort
-	q = quick sort
+	q = quick sort**
 	m = merge sort
 	
 	while (input != 'e')
@@ -31,9 +31,9 @@ void main()
 
 			separate .cpp
 			void runInsertion(){
-			(cout << "Already Sorted N = 10: " << result -> AnswerArray) * 100
-			cout << mean(answerArray);
-			cout << standardDeviation(answerArray);
+			(cout << "Already Sorted N = 10: " << result -> TimeArray) * 100
+			cout << mean(TimeArray);
+			cout << standardDeviation(TimeArray);
 			}
 
 			void sortedArray(int n){

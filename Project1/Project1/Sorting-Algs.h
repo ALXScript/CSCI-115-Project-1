@@ -1,3 +1,7 @@
+#ifndef SORTING_ALGS_H
+#define SORTING_ALGS_H
+
+
 #include "MyArray.h"
 #include <iostream>
 #include <ctime>
@@ -190,3 +194,5 @@ void quickSort(ourArray<T> &arr, int lo, int hi) {
 	quickSort(arr, lo, p - 1);
 	quickSort(arr, p + 1, hi);
 }
+
+#endif // !SORTING_-_ALGS_H
