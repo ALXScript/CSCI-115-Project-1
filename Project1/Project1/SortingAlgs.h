@@ -122,44 +122,39 @@ void mergeSort(ourArray<T> &arr) {
 //Function: Belongs to Quick Sort function : This function partitions the array
 template <typename T>
 int partition(ourArray<T> &arr, int lo, int hi) {
-	int i = lo, j = hi + 1;
-	while (true)
-	{
-		while (arr.getElem(++i) < arr.getElem(lo)) /// changed back to ++i because the way the function is written it has to increment this index before running the while loop
-		{
-			if (i == hi)
-			{
-				break;
-			}
+	int m = (lo + hi) / 2;
+	//std::cout << m << std::endl;
+	arr.swapElem(lo, m);
+	T pivot = arr.getElem(lo);
+	int l = lo + 1;
+	int r = hi;
+	while (l <= r) {
+		while (arr.getElem(r) > pivot) {
+			r = r - 1;
 		}
-		while (arr.getElem(lo) < arr.getElem(--j)) /// changed back to --j because the way the function is written it has to decrement this index before running the while loop
-		{
-			if (j == lo)
-			{
-				break;
-			}
+		while (l <= r && arr.getElem(l) <= pivot) {
+			l = l + 1;
 		}
-		if (i >= j)
-		{
-			break;
+		if (l <= r) {
+			arr.swapElem(l, r);
+			l = l + 1;
+			r = r - 1;
 		}
-		arr.swapElem(i, j);
 	}
-	arr.swapElem(lo, j);
-
-	return j;
+	arr.swapElem(lo, r);
+	return r;
 }
+
 
 //Function: Quick Sort
 template<typename T>
 void quickSort(ourArray<T> &arr, int lo, int hi) {
-	if (hi <= lo)
+	if (lo < hi)
 	{
-		return;
+		int p = partition(arr, lo, hi);
+		quickSort(arr, lo, p - 1);
+		quickSort(arr, p + 1, hi);
 	}
-	int p = partition(arr, lo, hi);
-	quickSort(arr, lo, p - 1);
-	quickSort(arr, p + 1, hi);
 }
 
 #endif // !SORTING_-_ALGS_H

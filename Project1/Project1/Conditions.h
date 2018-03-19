@@ -292,7 +292,7 @@ void quickSortShuffled10(int arraySize) {
 		execute.preSort();
 		execute.shuffle10();
 		clock_t start = clock();
-		quickSort(execute, 0, arraySize - 1);
+		quickSort(execute, 0, arraySize-1);
 		double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 		timeArray.setElem(i, timeSpent);
 	}
@@ -312,7 +312,7 @@ void quickSortReversed(int arraySize) {
 		execute.preSort();
 		execute.reverse();
 		clock_t start = clock();
-		quickSort(execute, 0, arraySize - 1);
+		quickSort(execute, 0, arraySize-1);
 		double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 		timeArray.setElem(i, timeSpent);
 	}

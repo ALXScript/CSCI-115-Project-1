@@ -148,7 +148,7 @@ void ourArray<T>::shuffle10() {
 // Sets arrays elements in sorted order from 0 to size
 template <typename T>
 void ourArray<T>::preSort() {
-	for (int i = 0; i < size; i++){
+	for (int i = 0; i <= size-1; i++){
 		myArray[i] = i;
 	}
 }
