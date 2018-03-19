@@ -43,21 +43,25 @@ void main()
 				case 10:
 					//Insertion Sort for a Sorted Array of Size 10
 					insSortSorted(arraySize);
+					arraySize = 0;
 					break;
 
 				//size 1000
 				case 1000:
-					//Insertion Sort For a Sorted Array of Size 1,000
+					insSortSorted(arraySize);
+					arraySize = 0;
 					break;
 
 				//size 10,000
 				case 10000:
-					//Insertion Sort For a Sorted Array of Size 10,000
+					insSortSorted(arraySize);
+					arraySize = 0;
 					break;
 
 				//size 100,000
 				case 100000:
-					//Insertion Sort For a Sorted Array of Size 100,000
+					insSortSorted(arraySize);
+					arraySize = 0;
 					break;
 
 				//size 1,000,000

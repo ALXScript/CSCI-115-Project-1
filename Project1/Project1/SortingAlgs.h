@@ -39,17 +39,17 @@ void selSort(ourArray<T> &arr) {
 //Function: Insertion Sort
 template <typename T>
 void insSort(ourArray<T> &arr, int lo, int hi) {
-	for (int i = (lo + 1); i <= hi; i++)
+	int j, key;
+	for (int i = 1; i < hi; i++)
 	{
-		int idx = i;
-		for (int j = i - 1; j >= lo; j--)
-		{
-			while (arr.getElem(idx) < arr.getElem(j))
+		key = arr.getElem(i);
+		j = i - 1;
+		while (j > 0 && arr.getElem(j) > key);
 			{
-				arr.swapElem(idx, j);
-				idx = j;
+				arr.swapElem(j+1, j);
+				j = j - 1;
 			}
-		}
+			arr.setElem(j+1, key);
 	}
 }
 

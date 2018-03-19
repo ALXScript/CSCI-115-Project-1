@@ -14,7 +14,7 @@ void insSortSorted(int arraySize) {
 			ourArray<int> execute(arraySize);
 			execute.preSort();
 			clock_t start = clock();
-			insSort(execute, 0, arraySize-1);
+			insSort(execute, 0, arraySize);
 			double timeSpent = (clock() - start) / (double)CLOCKS_PER_SEC;
 			timeArray.setElem(i, timeSpent);
 	}
