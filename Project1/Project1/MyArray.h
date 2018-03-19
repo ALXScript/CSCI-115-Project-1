@@ -76,7 +76,7 @@ T ourArray<T>::getElem(int idx) {
 //Gets the mean of all the elements in the array of the runtimes after n sized array with 100 iterations
 template <typename T>
 double ourArray<T>::getMean() {
-	double sum;
+	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
 		sum = myArray[i] + sum;
@@ -87,7 +87,7 @@ double ourArray<T>::getMean() {
 //Gets the Standard Deviation of all the elements in the array of the runtimes after n sized array with 100 iterations
 template <typename T>
 double ourArray<T>::getStDev() {
-	double sum1, sum2, mean1, mean2;
+	double sum1 = 0, sum2 = 0, mean1, mean2;
 	for (int i = 0; i < size; i++)
 	{
 		sum1 = myArray[i] + sum1;
