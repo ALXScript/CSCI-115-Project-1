@@ -42,6 +42,7 @@ void main()
 				//size 10
 				case 10:
 					//Insertion Sort for a Sorted Array of Size 10
+					insSortSorted(arraySize);
 					break;
 
 				//size 1000
@@ -66,7 +67,6 @@ void main()
 
 				//default UI
 				default:
-					cin.ignore();
 					cout << "\n\nPlease Select the amount of elements you would like to sort:\n10\t1000\t10000\n100000\t1000000\n";
 					cin >> arraySize;
 					break;
@@ -186,13 +186,13 @@ void main()
 
 			//default UI
 			default: cout << "\n\nPlease select the type of array you would like:\ns: Already Sorted\th: Completely Shuffled\nr: Sorted in Reverse Order\tt: Sorted and Shuffled at 10%\n";
+				cin >> arrayType;
 				break;
 			}
 			break;
 
 		//Selection sort
 		case 's':
-			cin.clear();
 			switch (arrayType)
 			{
 				//sorted
@@ -345,13 +345,13 @@ void main()
 
 				//default UI
 			default: cout << "\n\nPlease select the type of array you would like:\ns: Already Sorted\th: Completely Shuffled\nr: Sorted in Reverse Order\tt: Sorted and Shuffled at 10%\n";
+				cin >> arrayType;
 				break;
 			}
 			break;
 
 		//Bubble Sort
 		case 'b':
-			cin.clear();
 			switch (arrayType)
 			{
 				//sorted
@@ -504,13 +504,13 @@ void main()
 
 				//default UI
 			default: cout << "\n\nPlease select the type of array you would like:\ns: Already Sorted\th: Completely Shuffled\nr: Sorted in Reverse Order\tt: Sorted and Shuffled at 10%\n";
+				cin >> arrayType;
 				break;
 			}
 			break;
 
 		//Quick Sort
 		case 'q':
-			cin.clear();
 			switch (arrayType)
 			{
 				//sorted
@@ -663,13 +663,13 @@ void main()
 
 				//default UI
 			default: cout << "\n\nPlease select the type of array you would like:\ns: Already Sorted\th: Completely Shuffled\nr: Sorted in Reverse Order\tt: Sorted and Shuffled at 10%\n";
+				cin >> arrayType;
 				break;
 			}
 			break;
 
 		//Merge Sort
 		case 'm':
-			cin.clear();
 			switch (arrayType)
 			{
 				//sorted
@@ -822,6 +822,7 @@ void main()
 
 				//default UI
 			default: cout << "\n\nPlease select the type of array you would like:\ns: Already Sorted\th: Completely Shuffled\nr: Sorted in Reverse Order\tt: Sorted and Shuffled at 10%\n";
+				cin >> arrayType;
 				break;
 			}
 			break;
